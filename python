@@ -1,0 +1,9 @@
+// python 
+texto = input("Escribe el texto que deseas guardar: ")
+
+nombre_archivo = "texto_guardado.txt"
+
+with open(nombre_archivo, 'w') as archivo:
+    archivo.write(texto)
+
+print("Texto guardado correctamente en el archivo 'texto_guardado.txt'")
