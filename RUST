@@ -1,0 +1,15 @@
+use std::fs::File;
+use std::io::prelude::*;
+
+fn main() {
+    let mut texto = String::new();
+    println!("Escribe el texto que deseas guardar:");
+    std::io::stdin().read_line(&mut texto).expect("Error al leer la entrada");
+
+    let nombre_archivo = "texto_guardado.txt";
+    let mut archivo = File::create(nombre_archivo).expect("Error al crear el archivo");
+
+    archivo.write_all(texto.as_bytes()).expect("Error al escribir en el archivo");
+
+    println!("Texto guardado correctamente en el archivo 'texto_guardado.txt'");
+}
